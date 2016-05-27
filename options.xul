@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://tabfocus/locale/options.dtd">
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<setting pref="extensions.tabfocus.delay" type="integer" title="&delay.title;" />
+
+	<setting pref="extensions.tabfocus.previewmode" type="bool" title="&previewMode.title;" />
+	<setting pref="extensions.tabfocus.returndelay" type="integer" title="&returnDelay.title;" />
+</vbox>
