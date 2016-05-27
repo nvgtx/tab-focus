@@ -1,5 +1,4 @@
-README
-
+# tab-focus
 Mozilla Firefox extension https://addons.mozilla.org/en-US/firefox/addon/tab-focus/
 
 Pack as zip, then rename to .xpi
