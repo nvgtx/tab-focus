@@ -1,3 +1,4 @@
 ﻿<!ENTITY delay.title "Delay in ms">
 <!ENTITY previewMode.title "Preview mode enabled">
 <!ENTITY returnDelay.title "Preview mode delay in ms">
+<!ENTITY forceReload.title "Force reload on tab switch">

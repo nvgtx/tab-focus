@@ -5,4 +5,6 @@
 
 	<setting pref="extensions.tabfocus.previewmode" type="bool" title="&previewMode.title;" />
 	<setting pref="extensions.tabfocus.returndelay" type="integer" title="&returnDelay.title;" />
+
+	<setting pref="extensions.tabfocus.forcereload" type="bool" title="&forceReload.title;" />
 </vbox>

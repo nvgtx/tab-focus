@@ -1,3 +1,4 @@
 ﻿<!ENTITY delay.title "Verzögerung in ms">
 <!ENTITY previewMode.title "Vorschaumodus aktiviert">
 <!ENTITY returnDelay.title "Verzögerung des Vorschaumodus in ms">
+<!ENTITY forceReload.title "Aktualisierung bei Tabwechsel erzwingen">

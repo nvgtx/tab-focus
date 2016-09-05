@@ -21,6 +21,7 @@ function TabfocusCallback()
 {
 	this.window=null;
 	this.target=null;
+	this.preferencesBranch=null;
 }
 
 function Tabfocus()
@@ -31,6 +32,7 @@ function Tabfocus()
 
 	this.tid=Cc["@mozilla.org/timer;1"].createInstance(Ci.nsITimer);
 	this.callback=new TabfocusCallback();
+	this.callback.setPreferecesBranch(this.preferencesBranch);
 
 	//preview-mode
 	this.previewBaseTab=null;
@@ -43,6 +45,11 @@ TabfocusCallback.prototype.setTarget=function(target)
 	this.target=target;
 }
 
+TabfocusCallback.prototype.setPreferecesBranch=function(preferencesBranch)
+{
+	this.preferencesBranch=preferencesBranch;
+}
+
 TabfocusCallback.prototype.setWindow=function(window)
 {
 	this.window=window;
@@ -53,6 +60,16 @@ TabfocusCallback.prototype.notify=function(timer)
 	if(this.target!=null && this.window!=null)
 	{
 		this.window.gBrowser.selectedTab=this.target;
+
+		//force reload if configured
+		if(this.preferencesBranch!=null)
+		{
+			if(this.preferencesBranch.getBoolPref("forcereload"))
+			{
+				this.window.gBrowser.reloadTab(this.window.gBrowser.selectedTab);
+			}
+		}
+
 		this.target=null;
 	}
 }
@@ -151,6 +168,7 @@ Tabfocus.prototype.setDefaultPreferences=function()
 	this.preferencesDefaultBranch.setIntPref("delay", 150);
 	this.preferencesDefaultBranch.setBoolPref("previewmode", false);
 	this.preferencesDefaultBranch.setIntPref("returndelay", 50);
+	this.preferencesDefaultBranch.setBoolPref("forcereload", false);
 };
 
 function startup(data, reason)
